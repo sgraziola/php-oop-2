@@ -9,46 +9,15 @@ Immaginare quali sono le classi necessarie per creare uno shop online con le seg
 Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 */
 
-class Product
-{
-    public $name;
-    public $image;
-    public $price;
+require __DIR__ . '/Models/Product.php';
+require __DIR__ . '/Models/Category.php';
+require __DIR__ . '/Models/Type.php';
 
-    public function __construct(String $name, String $image, Int $price)
-    {
-        $this->name = $name;
-        $this->image = $image;
-        $this->price = $price;
-    }
-}
 
-class CatProduct extends Product
-{
-    public $category_icon;
-}
 
-class DogProduct extends Product
-{
-    public $category_icon;
-}
-
-class Food
-{
-    public $type;
-}
-
-class Toys
-{
-    public $type;
-}
-
-class Kennel
-{
-    public $type;
-}
-
-class Pesticide
-{
-    public $type;
-}
+$catBall = new Product("palla bong", "https://static.zoomalia.com/prod_img/13843/la_balle-22707.jpg", 59, new Category("cats"), new Type("toy"));
+$dogFood = new Product('Area Wild Manzo Salmone', 'https://www.area-dog.it/wp-content/uploads/2020/11/area-wild-manzo-salmone-1.jpg', 30, new Category("dogs"), new Type("food"));
+$dogKennel = new Product('Beltom Cuccia XL', 'http://www.cuccepercani.eu/wp-content/uploads/2015/06/cucce-per-cani-1.jpg', 130, new Category("dogs"), new Type("kennel"));
+var_dump($catBall);
+var_dump($dogFood);
+var_dump($dogKennel);
