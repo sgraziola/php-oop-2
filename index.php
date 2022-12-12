@@ -59,9 +59,7 @@ $products = [$catBall, $dogFood, $dogKennel];
 
                         </div>
                         <div class="card-footer">
-                            <small>
-                                Prezzo <?= $product->price ?> $
-                            </small>
+                            <small>Prezzo: <?= $product->price ?></small>
                         </div>
                     </div>
                 </div>
