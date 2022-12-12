@@ -3,7 +3,7 @@
 class Category
 {
     public $category_name;
-    private $icon;
+    public $icon;
 
     public function __construct(String $category_name)
     {
