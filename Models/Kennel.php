@@ -9,9 +9,10 @@ class Kennel extends Product
     use Weight;
     public $usage;
 
-    public function __construct(String $name, String $image, float $price, Category $category, String $usage)
+    public function __construct(String $name, String $image, float $price, Category $category, String $usage, $weight, $unit)
     {
         $this->usage = $usage;
+        $this->set_weight($weight, $unit);
 
         parent::__construct($name, $image, $price, $category);
     }
