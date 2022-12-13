@@ -3,7 +3,7 @@
 class Category
 {
     public $category_name;
-    public $icon;
+    private $icon;
 
     public function __construct(String $category_name)
     {
@@ -11,18 +11,18 @@ class Category
         $this->set_icon($category_name);
     }
 
-    private function set_icon($category_name)
+    private function set_icon()
     {
-        if ($category_name === "dogs") {
+        if ($this->category_name === "dogs") {
             $this->icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn1gxNcInCZwfpcB4uoWwcTkcIcDKpYBo9-oQfMdpZVqCzGl0A&s";
-        } else if ($category_name === "cats") {
+        } else if ($this->category_name === "cats") {
             $this->icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ97T5_nF6D_YEIKkjqQK0JxyLQ-dE2Ki0U4tRnS7zg_Io1XkIk&s";
         } else {
             exit;
         }
     }
 
-    private function get_icon()
+    public function get_icon()
     {
         return $this->icon;
     }

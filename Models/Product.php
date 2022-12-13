@@ -6,14 +6,12 @@ class Product
     public $image;
     public $price;
     public $category;
-    public $type;
 
-    public function __construct(String $name, String $image, Int $price, Category $category, Type $type)
+    public function __construct(String $name, String $image, float $price, Category $category)
     {
         $this->name = $name;
         $this->image = $image;
         $this->price = $price . ' $';
         $this->category = $category;
-        $this->type = $type;
     }
 }
