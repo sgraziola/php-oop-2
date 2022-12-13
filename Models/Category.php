@@ -13,12 +13,16 @@ class Category
 
     public function set_icon()
     {
-        if ($this->category_name === "dogs") {
-            $this->icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn1gxNcInCZwfpcB4uoWwcTkcIcDKpYBo9-oQfMdpZVqCzGl0A&s";
-        } else if ($this->category_name === "cats") {
-            $this->icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ97T5_nF6D_YEIKkjqQK0JxyLQ-dE2Ki0U4tRnS7zg_Io1XkIk&s";
-        } else {
-            throw new Exception("Category not Found!", 1);
+        try {
+            if ($this->category_name === "dogs") {
+                $this->icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn1gxNcInCZwfpcB4uoWwcTkcIcDKpYBo9-oQfMdpZVqCzGl0A&s";
+            } else if ($this->category_name === "cats") {
+                $this->icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ97T5_nF6D_YEIKkjqQK0JxyLQ-dE2Ki0U4tRnS7zg_Io1XkIk&s";
+            } else {
+                throw new Exception("Category not Found!", 1);
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
         }
     }
 
