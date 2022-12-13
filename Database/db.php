@@ -15,3 +15,11 @@ $dogKennel = new Kennel('Cuccia Zeus 70', 'https://tcdn.storeden.com/gallery/62c
 
 
 $products = [$catToy, $dogFood, $dogKennel];
+
+try {
+    $rabbits = new Category("rabbits");
+    $rabbitsIcon = $rabbits->set_icon();
+    echo $rabbitsIcon;
+} catch (Exception $e) {
+    echo $e->getMessage();
+}

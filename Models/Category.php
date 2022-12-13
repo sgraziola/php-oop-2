@@ -11,14 +11,14 @@ class Category
         $this->set_icon($category_name);
     }
 
-    private function set_icon()
+    public function set_icon()
     {
         if ($this->category_name === "dogs") {
             $this->icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn1gxNcInCZwfpcB4uoWwcTkcIcDKpYBo9-oQfMdpZVqCzGl0A&s";
         } else if ($this->category_name === "cats") {
             $this->icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ97T5_nF6D_YEIKkjqQK0JxyLQ-dE2Ki0U4tRnS7zg_Io1XkIk&s";
         } else {
-            exit;
+            throw new Exception("Category not Found!", 1);
         }
     }
 
